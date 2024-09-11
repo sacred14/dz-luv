@@ -1,8 +1,15 @@
 #include <locale.h>
 
 #include <stdio.h>
-
-void main()
+void date()
+{
+	puts("   __      __      __   __ ");
+	puts("/|  /  /|   _|    |  | |__ ");
+	puts(" |  |   |  |__    |__| |__|");
+	getchar();
+	return 0;
+}
+void figures()
 {
 	setlocale(LC_CTYPE, "RUS");
 	puts("             *     ____                         ");
@@ -22,4 +29,11 @@ void main()
 	getchar();
 	return 1;
 
+}
+void main()
+{
+	setlocale(LC_CTYPE, "RUS");
+	
+	date();
+	figures();
 }
