@@ -33,3 +33,14 @@ int main()
 	task3();
 	lab();
 }
+
+
+
+
+int task3()
+{
+	float n = 3, L = 313;
+	int k = 4, m = 2;
+	printf("%-s\n %8.0f\n %8.0f\n %12s\n %-122s %+08.02f\n ", "????:", n, L, "__", "?????:", n / L);
+
+}
