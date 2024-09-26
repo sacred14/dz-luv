@@ -1,0 +1,41 @@
+#include<locale.h>
+#include <math.h>
+int lab6task1()
+{
+	int year;
+	puts("введите год:\n");
+	scanf("%i", &year);
+	int d;
+	d = year % 4;
+	if (year % 4 == 0 && year%100!=0 ||year%400==0) puts("год високосный\n");
+	else printf("\n%i год невисокосный\n",year);
+
+	
+}
+int lab6task2(x)
+{
+	float F;
+	double x;
+	scanf("%lf", &x);
+	F = x >= 8 ? -x * x - 9 : 1 / (x * x * x * x - 6);
+	printf("\n%.2f", F);
+
+	//КОНТРОЛЬНЫЙ ПРИМЕР 
+	//при х>=8 :100
+	//при х<8: 120 
+}
+
+int lab6task2_2(y)
+{
+	float Func;
+	scanf("%i", &y);
+	Func = y >= 9 ? -y * y*y - 100 : 1 / (y * y * y * y - 9);
+	printf("\n%f", Func);
+}
+int main()
+{
+	setlocale(LC_CTYPE, "RUS");
+	lab6task1();
+	lab6task2();
+	lab6task2_2(4);
+}
