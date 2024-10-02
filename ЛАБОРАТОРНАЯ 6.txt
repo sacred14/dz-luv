@@ -1,0 +1,88 @@
+#include <stdio.h>
+#include<locale.h>
+#include <math.h>
+int lab6task1()
+{
+	int year;
+	puts("введите год:\n");
+	scanf("%i", &year);
+	int d;
+	d = year % 4;
+	if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) puts("год високосный\n");
+	else printf("\n%i год невисокосный\n", year);
+
+
+}
+int lab6task2(zx)
+{
+	float F;
+	double x;
+	scanf("%lf", &x);
+	F = x >= 8 ? -x * x - 9 : 1 / (x * x * x * x - 6);
+	printf("\n%.2f", F);
+
+	//КОНТРОЛЬНЫЙ ПРИМЕР 
+	//при х>=8 :100
+	//при х<8: 120 
+}
+
+int lab6task2_2(zy)
+{
+	float Func;
+	double y;
+	scanf("%i", &y);
+	Func = y >= 9 ? -y * y * y - 100 : 1 / (y * y * y * y - 9);
+	printf("\n%.2f", Func);
+}
+int lab4homework()
+{
+	char name1;
+	int dateday;
+	int datemonth;
+	int dateyear;
+	int dateday2;
+	int datemonth2;
+	int dateyear2;
+	char name2;
+	puts("введите имя");
+	scanf("%s", &name1);
+	puts("введите год рождения");
+	scanf("%d",&dateday);
+	scanf("%d", &datemonth);
+	scanf("%d", &dateyear);
+	puts("введите имя 2 человека");
+	scanf("%s",&name2);
+	puts("введите год рождения 2 человека");
+	scanf("%d", &dateday2);
+	scanf("%d", &datemonth2);
+	scanf("%d", &dateyear2);
+	if (dateyear > dateyear2) puts("первый человек старше");
+	else puts("второй человек старше");
+	if (dateyear == dateyear2 && datemonth < datemonth2) printf("ОТВЕТ %s", name1);
+	else printf("%s", name2);
+	if (dateyear == dateyear2 && datemonth == datemonth2 && dateday < dateday2) printf("ОТВЕТ &s", name1);
+	else printf("%s", name2);
+
+	if (dateyear2 > dateyear) printf("ОТВЕТ %s", name2);
+	if (dateyear == dateyear2 && datemonth2 < datemonth) printf("ОТВЕТ %s", name2);
+	if (dateyear == dateyear2 && datemonth == datemonth2 && dateday2 < dateday) printf("ОТВЕТ &s", name2);
+
+	
+
+
+
+
+
+
+}
+
+
+
+int main()
+{
+	setlocale(LC_CTYPE, "RUS");
+	lab6task1();
+	lab6task2();
+	lab6task2_2();
+	lab4homework();
+}
