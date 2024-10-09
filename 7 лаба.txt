@@ -1,0 +1,161 @@
+#include <stdio.h>
+#include<locale.h>
+int task1()
+
+{
+	setlocale(LC_CTYPE, "RUS");
+	char c;
+
+	printf("Введите символы цифры от 0 до 9: ");
+
+	scanf("%c", &c);//считывание с консоли
+
+	switch (c)
+
+	{
+
+	case '0':
+
+		printf("Это цифра.\n");
+
+		break;
+
+	case '1':
+
+		printf("Это цифра.\n");
+
+		break;
+	case '2':
+
+		printf("Это цифра.\n");
+
+		break;
+
+	case '3':
+
+		printf("Это цифра.\n");
+
+		break;
+	case '4':
+
+		printf("Это цифра.\n");
+
+		break;
+
+	case '5':
+
+		printf("Это цифра.\n");
+
+		break;
+	case '6':
+
+		printf("Это цифра.\n");
+
+		break;
+
+	case '7':
+
+		printf("Это цифра.\n");
+
+		break;
+	case '8':
+
+		printf("Это цифра.\n");
+
+		break;
+
+	case '9':
+
+		printf("Это цифра.\n");
+
+		break;
+	default:
+
+		printf("Это буква\n");
+
+	}
+
+	return 0;
+
+}
+int task2()
+{
+	float x, y;
+	char c;
+
+	scanf("%f %c %f", &x, &c, &y);
+	float s = x + y;
+	float r = x - y;
+	float u = x * y;
+	float d = x / y;
+	switch (c)
+	{
+	case '+':
+		printf("Сложение x + y = %f", s);
+		break;
+	case '-':
+		printf("Вычитание x - y = %f", r);
+		break;
+	case '/':
+		printf("Деление x на y = %f", d);
+		break;
+	case '*':
+		printf("Умножение x на y = %f", u);
+		break;
+	default:
+		printf("неправильный ввод");
+	}
+}
+
+
+int homeworklab7var25()
+{
+	char c;
+
+	printf("Введите оценку: ");
+
+	scanf("%c", &c);
+
+	switch (c)
+
+	{
+
+	case '1':
+
+		printf("Плохо\n");
+
+		break;
+
+	case '2':
+
+		printf("Неудовлетварительно\n");
+
+		break;
+	case '3':
+
+		printf("Удовлетворительно\n");
+
+		break;
+
+	case '4':
+
+		printf("Хорошо\n");
+
+		break;
+	case '5':
+
+		printf("Отлично\n");
+
+		break;
+	default:
+		printf("Неверное значение оценки");
+	}
+}
+int main()
+{
+	setlocale(LC_CTYPE, "RUS");
+	//task1();
+	//task2();
+	homeworklab7var25();
+	
+}
