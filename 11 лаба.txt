@@ -1,0 +1,138 @@
+#define N 100
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+#include <locale.h>
+#include <math.h>
+
+double function(double x) {
+    return 1;
+}
+
+int lab11() {
+    float A[10];
+    float temp;
+    float originalValues[10];
+    float sum = 0;
+    setlocale(LC_ALL, "Rus");
+
+    for (int i = 0; i < 10; i++) {
+        printf("a[%d] = ", i + 1);
+        scanf("%f", &temp);
+        A[i] = temp;
+        originalValues[i] = A[i];
+    }
+
+    for (int i = 0; i < 10; i++) {
+        if (A[i] == 0.0) {
+            A[i] = i + 1;
+        }
+        sum += A[i];
+    }
+
+    printf("| индекс | исходное значение | новое значение |\n");
+    printf("|--------|------------------|----------------|\n");
+
+    for (int i = 0; i < 10; i++) {
+        printf("| %6d | %17.2f | %15.2f |\n", i + 1, originalValues[i], A[i]);
+    }
+    printf("|--------|------------------|----------------|\n");
+    printf("\n\n\n\n\n\n");
+    float average = sum / 10.0;
+    printf("Среднее арифметическое: %.2f\n", average);
+
+
+
+
+
+
+    double array[N];
+    double step, x;
+    double sumPositive = 0.0, sumNegative = 0.0;
+    int countPositive = 0, countNegative = 0;
+
+    printf("Функция: y = |lg x| - (x - 2)^2\n");
+    printf("Введите шаг табуляции: ");
+    scanf("%lf", &step);
+
+    int index = 0;
+    for (double x = 2.0; x <= 15.0; x += step) {
+        if (index < N) {
+            double f_x;
+            f_x = fabs(log10(x)) - pow(x - 2, 2);
+            array[index] = f_x;
+
+            if (f_x > 0) {
+                sumPositive += f_x;
+                countPositive++;
+            }
+            else {
+                sumNegative += f_x;
+                countNegative++;
+            }
+
+            index++;
+        }
+        else {
+            break;
+        }
+
+        double averagePositive = (countPositive > 0) ? sumPositive / countPositive : 0.0;
+
+        printf("Имя массива: array\n");
+        printf("Накопленное значение для положительных элементов: %.2f\n", sumPositive);
+        printf("Накопленное значение для отрицательных элементов: %.2f\n", sumNegative);
+        printf("Число положительных элементов: %d\n", countPositive);
+        printf("Число отрицательных элементов: %d\n", countNegative);
+        printf("Вычисленное среднее для положительных элементов: %.2f\n", averagePositive);
+
+        return 0;
+    }
+
+
+
+
+
+
+
+}
+
+
+
+
+int homewotk25var() {
+
+    int n, A, sum = 0;
+
+    printf("Введите размер массива n: ");
+    scanf("%d", &n);
+
+    int array[7] = {2,4,6,8,10,12,14};
+
+    printf("Введите %d целых чисел:\n", n);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &array[i]);
+    }
+
+    printf("Введите число A: ");
+    scanf("%d", &A);
+
+    for (int i = 0; i < n; i++) {
+        if (array[i] == A) {
+            sum += i; // Суммируем индексы
+        }
+    }
+
+    printf("Сумма индексов элементов, равных A: %d\n", sum);
+
+    return 0;
+}
+
+
+
+
+
+int main() {
+    lab11();
+    homewotk25var();
+
+}
