@@ -1,0 +1,28 @@
+int task1()
+{
+  int n,m,s,k,i;
+  k = 0;
+  s = 0;
+  printf("Введте число m:\n");
+  scanf("%d", &m);
+  printf("Введте число n:\n");
+  scanf("%d", &n);
+  for (int i = m; i >= n; i--)
+  {
+    s += i;
+    printf("Выполнено %d раз(а)\n", k++);
+  }
+  printf("Результат %d\n", s);
+}
+int task2()
+{
+  float step, y;
+  puts("Введите шаг:");
+  scanf("%f", &step);
+  printf("\tx\t\ty\n");
+  for (double x = 2; x <= 4.1; x += step)
+  {
+    y = fabs(log10(x)) - pow((x - 2), 2);
+    printf("|\t%.1f\t|\t%+.8lf\t|\n", x, y);
+  }
+}
