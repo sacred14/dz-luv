@@ -1,0 +1,204 @@
+#include <stdio.h>
+#define _CRT_SECURE_NO_DEPRECATE 
+#define _USE_MATH_DEFINES 
+#include<locale.h>
+#include<math.h>
+#include<stdlib.h>
+
+// Функция для заполнения массива значениями
+double* full_elements(double* ptr_array, int size) {
+    for (int i = 0; i < size; i++) {
+        printf("Введите элемент [%d]: ", i);
+        scanf("%lf", &ptr_array[i]);
+    }
+    return ptr_array;
+}
+
+// Функция для преобразования элементов массива
+double* calc_elements(double* ptr_array, int size) {
+    double* new_array = (double*)malloc(size * sizeof(double));
+    if (new_array == NULL) {
+        puts("Ошибка выделения памяти");
+        return NULL;
+    }
+    for (int i = 0; i < size; i++) {
+        // Здесь замените выражение на необходимое преобразование
+        new_array[i] = ptr_array[i] * 2; // Пример: удвоение элементов
+    }
+    return new_array;
+}
+
+// Функция для вывода элементов массива
+int put_elements(double* ptr_array, int size) {
+    for (int i = 0; i < size; i++) {
+        printf("%0.2lf ", ptr_array[i]);
+    }
+    printf("\n");
+    return 0;
+}
+
+//int rand(int r, int size) {
+//    for (int i = 0; i < size; i++) {
+//        r = rand(r,size) % (size - i);
+//        //printf("%i",)
+//    }
+//    return r;
+//}
+
+
+int LAB16()
+{
+    int r = 999;
+    
+    setlocale(LC_CTYPE, "RUS");
+    double* ptr_array = NULL;
+    double* result_array = NULL;
+    int size;
+
+    // Ввод размера массива
+    printf("Введите размер массива: ");
+    scanf("%d", &size);
+
+    // Выделение памяти для массива
+    ptr_array = (double*)malloc(size * sizeof(double));
+    if (ptr_array == NULL) {
+        puts("Ошибка выделения памяти");
+        return -1;
+    }
+
+    // Заполнение массива значениями
+    full_elements(ptr_array, size);
+
+    // Преобразование элементов массива
+    result_array = calc_elements(ptr_array, size);
+    if (result_array == NULL) {
+        free(ptr_array);
+        return -1;
+    }
+
+    // Вывод исходного и преобразованного массива
+    printf("Исходный массив: ");
+    put_elements(ptr_array, size);
+    
+    printf("Преобразованный массив: ");
+    put_elements(result_array, size);
+
+    //printf("%i", rand(ptr_array[r])); ЭТО ПИЗДЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЕЦ
+    // Удаление массивов
+    free(ptr_array);
+    free(result_array);
+
+    return 0;
+}
+
+
+
+
+
+
+double* full_elements_a(double* ptr_array_a, int size_a) {
+    for (int a = 0; a < size_a; a++) {
+        printf("Введите элемент [%d]: ", a);
+        scanf("%lf", &ptr_array_a[a]);
+    }
+    return ptr_array_a;
+}
+
+double* full_elements_b(double* ptr_array_b, int size_b) {
+    for (int b = 0; b < size_b; b++) {
+        printf("Введите элемент [%d]: ", b);
+        scanf("%lf", &ptr_array_b[b]);
+    }
+    return ptr_array_b;
+}
+
+double* full_elements_c(double* ptr_array_c, int size_c) {
+    for (int c = 0; c < size_c; c++) {
+        printf("Введите элемент [%d]: ", c);
+        scanf("%lf", &ptr_array_c[c]);
+    }
+    return ptr_array_c;
+}
+
+double* full_elements_d(double* ptr_array_d, int size_d) {
+    for (int d = 0; d < size_d; d++) {
+        printf("элемент [%d]: ", d);
+        scanf("%lf", &ptr_array_d[d]);
+    }
+    return ptr_array_d;
+}
+
+
+int homework25() {
+
+    double* ptr_array_a = NULL;
+    double* result_array = NULL;
+
+
+    double* ptr_array_b = NULL;
+
+    double* ptr_array_c = NULL;
+
+
+    int size_a;
+    int size_b;
+    int size_c;
+
+
+    // Ввод размера массива
+    printf("Введите размер массива а: ");
+    scanf("%d", &size_a);
+    
+    ptr_array_a = (double*)malloc(size_a * sizeof(double));
+    if (ptr_array_a == NULL) {
+        puts("Ошибка выделения памяти");
+        return -1;
+    }
+
+    printf("Введите размер массива b: ");
+    scanf("%d", &size_b);
+
+    ptr_array_b = (double*)malloc(size_b * sizeof(double));
+    if (ptr_array_b == NULL) {
+        puts("Ошибка выделения памяти");
+        return -1;
+    }
+
+    printf("Введите размер массива c: ");
+    scanf("%d", &size_c);
+
+    ptr_array_a = (double*)malloc(size_c * sizeof(double));
+    if (ptr_array_c == NULL) {
+        puts("Ошибка выделения памяти");
+        return -1;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+int main() {
+
+    //LAB16();
+    homework25();
+}
