@@ -1,0 +1,106 @@
+#include <stdio.h>
+#include <locale.h>
+#include <math.h>
+#include <stdlib.h>
+
+#define PI 3.14159265358979323846
+#define SCREENW 120 // ширина графика
+#define SCREENH 30 // высота графика
+
+// Функция F1(x)
+double F1(double x) {
+    if (x == 0) {
+        printf("Ошибка: деление на ноль в функции\n");
+        return 0;
+    }
+    return (- log(x / PI))/cos(0.7*x);
+}
+
+// Функция F2(x)
+double F2(double x) {
+    if (x > -1) {
+        return x + 1;
+    }
+    else if (x <= -1) { 
+        if (x >= -2) {
+            return 1-x*x*x*x*x;
+        }
+        
+    }
+    if (x<-2) {
+        return x+log(cos(x));
+    }
+}
+
+
+
+// Функция для табуляции функции на заданном интервале
+void tabulate(double (*func)(double), double xn, double xk, double h) {
+    printf(" x\t\tf(x)\n");
+    printf("------------------------------------------\n");
+
+    for (double x = xn; x <= xk; x += h) {
+        double y = func(x);
+        printf("%lf\t%lf\n", x, y);
+    }
+}
+
+// Интерфейс программы
+int main() {
+    setlocale(LC_CTYPE, "RUS");
+    char choice;
+    double x, xn, xk, h;
+
+    do {
+        printf("\nВыберите действие с функцией:\n");
+        printf("1. Найти значение функции F1(x) при заданом списке \n");
+        printf("2. Найти значение функции F2(x) при заданом списке  \n");
+        printf("3. Табулировать функцию F1(x) на заданном интервале\n");
+        printf("4. Табулировать функцию F2(x) на заданном интервале\n");
+        printf("7. Завершить работу\n");
+        printf("Выберите действие: ");
+        scanf(" %c", &choice);
+
+        switch (choice) {
+        case '1':
+            //реализация чтения из файла множество значений
+
+        case '2':
+            //реализация чтения из файла множество значений
+
+        case '3':
+            printf("Введите начальное значение интервала: ");
+            scanf("%lf", &xn);
+            printf("Введите конечное значение интервала: ");
+            scanf("%lf", &xk);
+            printf("Введите шаг h: ");
+            scanf("%lf", &h);
+            printf("\nТаблица значений функции F1(x):\n");
+            tabulate(F1, xn, xk, h);
+            break;
+        case '4':
+            printf("Введите начальное значение интервала: ");
+            scanf("%lf", &xn);
+            printf("Введите конечное значение интервала: ");
+            scanf("%lf", &xk);
+            printf("Введите шаг h: ");
+            scanf("%lf", &h);
+            printf("\nТаблица значений функции F2(x):\n");
+            tabulate(F2, xn, xk, h);
+            break;
+
+        
+
+
+        case '7':
+            printf("Завершение работы.\n");
+            break;
+
+        default:
+            printf("Неверный выбор.\n");
+            break;
+        }
+    } while (choice != '7');
+
+    return 0;
+}
